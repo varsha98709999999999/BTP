@@ -1,0 +1,5 @@
+applications:
+- name: mourifirst
+  buildpacks:
+    - go_buildpack
+  random-route: true
