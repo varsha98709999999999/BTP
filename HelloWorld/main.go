@@ -13,6 +13,8 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Congratulations! Welcome to AnubhavTrainings.com")
 }
 
+
+
 func main() {
 	http.HandleFunc("/", IndexHandler)
 
