@@ -7,6 +7,7 @@ import (
 	"os"
 )
 
+
 // IndexHandler returns a simple message
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Congratulations! Welcome to AnubhavTrainings.com")
