@@ -1,7 +1,7 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Mon May 05 2025 04:56:57 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Mon May 05 2025 13:33:19 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>SAP Fiori Application Generator|
 |**App Generator Version**<br>1.17.4|
 |**Generation Platform**<br>SAP Business Application Studio|
@@ -9,7 +9,7 @@
 |**Service Type**<br>Local Cap|
 |**Service URL**<br>http://localhost:4004/odata/v4/CatalogService/|
 |**Module Name**<br>managepo|
-|**Application Title**<br>Manage purchase orders|
+|**Application Title**<br>Manage purchase order|
 |**Namespace**<br>bosch.po|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.135.0|

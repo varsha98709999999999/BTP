@@ -3,7 +3,6 @@ sap.ui.define(
     function (Component) {
         "use strict";
 
-        
         return Component.extend("bosch.po.managepo.Component", {
             metadata: {
                 manifest: "json"

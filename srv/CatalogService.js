@@ -1,9 +1,12 @@
 module.exports = cds.service.impl( async function(){
 
+
     const { POs, EmployeeSet } = this.entities;
+
 
     // const { a } =    {a:19,b:32,c:90}
     // lv_data = wa-comp
+
 
     ///generic handler - BEFORE Employee data is UPDATEd check (validation)
     this.before(['CREATE','UPDATE'], EmployeeSet, (req, res) => {
@@ -12,6 +15,7 @@ module.exports = cds.service.impl( async function(){
             req.error(500, "Salary must be less than 1 mn");
         }
     });
+
 
     this.on('boost', async (req,res) => {
         try {
@@ -25,11 +29,12 @@ module.exports = cds.service.impl( async function(){
             }).where(ID);
             let reply = await tx.read(POs).where(ID);
             return reply;
-            
+           
         } catch (error) {
-            
+           
         }
     });
+
 
     this.on('getLargestOrder', async (req,res) => {
         try {
@@ -38,23 +43,26 @@ module.exports = cds.service.impl( async function(){
             let reply = await tx.read(POs).orderBy({"GROSS_AMOUNT" : 'desc'})
                         .limit(1);
 
+
                        
             return reply;
-            
+           
         } catch (error) {
             return "Error aa gaya " + error.toString();
         }
     });
+
 
     this.on('loadInitials', async (req,res) => {
         try {
             return {
                 OVERALL_STATUS : 'N'
             };
-            
+           
         } catch (error) {
             return "Error aa gaya " + error.toString();
         }
     });
+
 
 })

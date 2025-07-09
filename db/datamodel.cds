@@ -1,10 +1,12 @@
 namespace anubhav.db;
 
+
 using { cuid, managed, temporal, Currency } from '@sap/cds/common';
 using { anubhav.common } from './commons';
 
+
 context master {
-    
+   
     entity businesspartner {
         key NODE_KEY: common.Guid @(title: '{i18n>XCEL_PARTNER}');
         BP_ROLE: String(2);
@@ -16,6 +18,7 @@ context master {
         BP_ID: String(32);
         COMPANY_NAME: String(250) @(title: '{i18n>XCEL_COMPANY}');
     }
+
 
     entity address {
         key NODE_KEY: common.Guid;
@@ -32,6 +35,7 @@ context master {
         businesspartner: Association to one businesspartner on
         businesspartner.ADDRESS_GUID = $self;
     }
+
 
     entity product{
         key NODE_KEY: common.Guid @(title: '{i18n>XCEL_PRODUCT}');
@@ -52,6 +56,7 @@ context master {
         DIM_UNIT:String(2);
     }
 
+
     entity employees: cuid {
         nameFirst: String(40);
         nameMiddle: String(40);
@@ -70,6 +75,7 @@ context master {
     }
 }
 
+
 context transaction {
     entity purchaseorder: cuid, common.Amount{
         //key NODE_KEY: common.Guid @(title: '{i18n>XCEL_POGUID}');
@@ -80,6 +86,7 @@ context transaction {
         Items: Composition of many poitems on Items.PARENT_KEY = $self;
     }
 
+
     entity poitems: cuid, common.Amount{
         //key NODE_KEY: common.Guid @(title: '{i18n>XCEL_POITEM_KEY}');
         PARENT_KEY: Association to purchaseorder @(title: '{i18n>XCEL_POGUID}');
@@ -87,4 +94,5 @@ context transaction {
         PRODUCT_GUID: Association to master.product @(title: '{i18n>XCEL_PRODUCT}');
     }
 }
+
 

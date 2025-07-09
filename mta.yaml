@@ -29,6 +29,7 @@ modules:
           forwardAuthToken: true
           url: '~{srv-url}'
 
+
   - name: mycapapp-srv
     type: nodejs
     path: gen/srv
@@ -45,6 +46,7 @@ modules:
       - name: mycapapp-db
       - name: mycapapp-auth
 
+
   - name: mycapapp-db-deployer
     type: hdb
     path: gen/db
@@ -52,6 +54,7 @@ modules:
       buildpack: nodejs_buildpack
     requires:
       - name: mycapapp-db
+
 
 resources:
   - name: mycapapp-db

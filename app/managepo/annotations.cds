@@ -1,6 +1,8 @@
 using CatalogService as service from '../../srv/CatalogService';
 
+
 annotate service.POs with @(
+
 
     UI.SelectionFields : [
         PO_ID,
@@ -9,6 +11,7 @@ annotate service.POs with @(
         GROSS_AMOUNT,
         OVERALL_STATUS
     ],
+
 
     UI.LineItem:[
         {
@@ -40,12 +43,14 @@ annotate service.POs with @(
         },
     ],
 
+
     UI.HeaderInfo: {
         TypeName : 'Purchase Order',
         TypeNamePlural: 'Purchase Orders',
         Title: { Value : PO_ID, },
         Description: {Value: PARTNER_GUID.COMPANY_NAME}
     },
+
 
     UI.Facets:[
         {
@@ -120,7 +125,10 @@ annotate service.POs with @(
         ],
     }
 
+
 );
+
+
 
 
 annotate service.POItems with @(
@@ -187,6 +195,7 @@ annotate service.POItems with @(
     ]
 );
 
+
 annotate service.POs with {
     PARTNER_GUID @(
         Common.Text: PARTNER_GUID.COMPANY_NAME,
@@ -194,12 +203,14 @@ annotate service.POs with {
     )
 }
 
+
 annotate service.POItems with {
     PRODUCT_GUID @(
         Common.Text: PRODUCT_GUID.DESCRIPTION,
         ValueList.entity: service.ProductSet
     )
 }
+
 
 //define a search help
 @cds.odata.valuelist
@@ -212,6 +223,7 @@ annotate service.businesspartner with @(
     ]
 );
 
+
 @cds.odata.valuelist
 annotate service.ProductSet with @(
     UI.Identification:[
@@ -221,4 +233,7 @@ annotate service.ProductSet with @(
         },
     ]
 );
+
+
+
 

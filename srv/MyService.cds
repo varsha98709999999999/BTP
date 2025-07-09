@@ -1,4 +1,11 @@
+// service MyService @(path: 'MyService') {
+//     //definition
+//     function api(name: String) returns String;
+
+
+// }
 using { anubhav.db.master } from '../db/datamodel';
+
 
 service MyService @(path: 'MyService') {
     //definition

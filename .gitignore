@@ -1,7 +1,6 @@
 # CAP mycapapp
 _out
 *.db
-db.sqlite*
 *.sqlite
 connection.properties
 default-*.json
